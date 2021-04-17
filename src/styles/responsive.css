@@ -1,0 +1,72 @@
+@media screen and (max-width: 650px) {
+  .burger{
+    display: block;
+  }
+  .nav {
+    background: #343434;
+    position: fixed;
+    right: 0;
+    top: 70px;
+    width: 40%;
+    height: calc(100% - 70px);
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all 400ms;
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+  .navlink {
+    text-align: center;
+  }
+  .navlink a {
+    width: 100%;
+    padding: 20px;
+  }
+  .nav-active {
+    right: 0;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    position: fixed;
+  }
+
+  .daftar-menu {
+    grid-row-gap: 16px;
+    grid-column-gap: 10px;
+  }
+
+  .item-rating {
+    font-size: 14px;
+  }
+
+  .item-content h4 {
+    font-size: 14px;
+  }
+
+  .item-description {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .daftar-menu {
+    display: grid;
+    grid-row-gap: 16px;
+    grid-column-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .daftar-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+      max-width: 1200px;
+      font-size: 14px;
+  }
+}
