@@ -1,4 +1,4 @@
-import $ from "jquery";
+import $ from 'jquery';
 
 const burger = document.querySelector('nav a');
 const nav = document.querySelector('.nav');
@@ -9,15 +9,15 @@ function toggleNav() {
   nav.classList.toggle('nav-active');
 }
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', () => {
   toggleNav();
 });
 
-function listAllMenu(){
-$.getJSON("data/DATA.json", function (data) {
-  let menu = data.restaurants;
-  $.each(menu, function(i, data) {
-    $('#menu-item').append(`
+function listAllMenu() {
+  $.getJSON('data/DATA.json', (data) => {
+    const menu = data.restaurants;
+    $.each(menu, (i, data) => {
+      $('#menu-item').append(`
       <article class="menu-item">
         <figure class="card">
           <div class="image-holder">

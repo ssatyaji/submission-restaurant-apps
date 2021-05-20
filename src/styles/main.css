@@ -13,7 +13,7 @@ body,html{
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Zilla Slab", sans-serif;
     color: #424242;
 }
 
@@ -119,17 +119,22 @@ nav {
 }
 
 .hero-text button {
-    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
     outline: 0;
     display: inline-block;
-    background-color: #f39c12;
+    background-color: transparent;
     padding: 15px;
-    border-radius: 55px;
+    border-radius: 5px;
     text-align: center;
     font-size: 13px;
     opacity: 0.8;
+    border: 2px solid #fff;
     cursor: pointer;
     color: #fff;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .hero-text a {
@@ -137,8 +142,8 @@ nav {
 }
   
 .hero-text button:hover {
-    background-color: #555;
-    color: white;
+    background-color: #fff;
+    color: #555;
 }
 
 .fa-check-circle {
@@ -181,8 +186,13 @@ nav {
     overflow: hidden;
 }
 
-.item-content {
+.item-content, .item-content__detail {
     padding: 18px;
+}
+
+.item-content a {
+    color: #424242;
+    text-decoration: none;
 }
 
 .image-holder {
@@ -224,6 +234,112 @@ nav {
 
 .item-rating {
     font-weight: 300;
+}
+
+/* menu detail item */
+.daftar-menu__detail {
+    text-align: left;
+    line-height: 1.8em;
+}
+
+.menu-item__detail {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-holder__detail {
+    position: relative;
+}
+
+.image-holder__detail span {
+    text-transform: uppercase;
+    position: absolute;
+    top: 40px;
+    font-size: 25px;
+    font-weight: 300;
+    left: 0;
+    background-color: #fff;
+    padding: 10px 10px 10px 20px;
+    color: #364547;
+}
+
+.item-content__header h3 {
+    font-family: raleway,sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    margin: 14px 0;
+}
+
+.item-content__header:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 3px;
+    width: 100px;
+    background-color: #f9c56a;
+    margin: 0 auto;
+}
+
+.item-address__detail {
+    padding-top: 14px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.item-description__detail {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.item-meta__detail {
+    padding-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-rating__detail {
+    padding-right: 5px;
+}
+
+.item-menus__detail {
+    background-color: #c7a254;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.item-menus__wrap {
+    font-family: raleway,sans-serif;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.item-menus__drinks, .item-menus__foods {
+    list-style: square;
+    padding: 20px;
+    background-color: #f9c56a;
+    padding-left: 50px;
+}
+
+.item-menus__foods {
+    background-color: #facb7b;
+}
+
+.item-menus__foods h4, .item-menus__drinks h4 {
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-align: center;
+    border-bottom: 1px solid #c99a48;
 }
 
 /* footer */
