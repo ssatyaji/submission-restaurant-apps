@@ -1,8 +1,11 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
+import './components/app-bar';
+import './components/hero';
+import './components/footer';
 import App from './views/app';
-// import './script.js';
+// import './script';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
