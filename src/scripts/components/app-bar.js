@@ -9,12 +9,11 @@ class AppBar extends HTMLElement {
       <div class="logo">
           <h1>RestorApps</h1>
       </div>
-      <a href="#" class="burger" id="hamburgerButton"><span class="fa fa-bars"></span></a>
+      <button class="burger" id="hamburgerButton">☰</button>
       <ul class="nav" id="navigationDrawer">
           <li class="navlink"><a href="./index.html">Home</a></li>
-          <li class="navlink"><a href="#">Favorit</a></li>
+          <li class="navlink"><a href="#/like">Favorit</a></li>
           <li class="navlink"><a href="https://www.linkedin.com/in/ssatyaji/" target="_blank">About Us</a></li>
-          <li class="navlink"><a href="#"><span class="fa fa-search"></span></a></li>
       </ul>
     </nav>
     `;

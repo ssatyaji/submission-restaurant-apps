@@ -5,7 +5,7 @@ import './components/app-bar';
 import './components/hero';
 import './components/footer';
 import App from './views/app';
-// import './script';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
@@ -19,4 +19,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });

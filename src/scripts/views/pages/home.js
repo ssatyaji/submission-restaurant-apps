@@ -4,14 +4,17 @@ import { createRestaurantItemTemplate } from '../templates/template-creator';
 const Home = {
   async render() {
     return `
-    <section class="content">
-      <h2 class="section-heading" id="explore-restauran">Explore Restaurant</h2>
-      <div class="container">
-          <div class="daftar-menu" id="menu-item">
+    <self-hero></self-hero>
+    <div class="container">
+      <section class="content">
+        <h2 class="section-heading" id="explore-restauran">Explore Restaurant</h2>
+        <div class="container">
+            <div class="daftar-menu" id="menu-item">
 
-          </div>
-      </div>
-    </section>
+            </div>
+        </div>
+      </section>
+    </div>
     `;
   },
 

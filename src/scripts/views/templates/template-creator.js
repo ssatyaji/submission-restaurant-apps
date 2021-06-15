@@ -4,7 +4,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 <article class="menu-item__detail">
 <figure class="card__detail">
   <div class="image-holder__detail">
-      <img class="item-thumbnail__detail" src="${restaurant.pictureId ? CONFIG.BASE_URL_IMAGE + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}" style="width:100%;">
+      <img class="item-thumbnail__detail" src="${restaurant.pictureId ? CONFIG.BASE_URL_IMAGE + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}" crossOrigin="anonymous" style="width:100%;">
       <span>Kota : ${restaurant.city}</span>
   </div>
   <div class="item-content__detail">
@@ -39,16 +39,20 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <h3>People Say About Us!</h3>
   </div>
   <div class="item-content__detail">
+
     <div class="item-review__detail">
-      ${restaurant.customerReviews.map(({ name, review, date }) => `
-      <div class="item-review__slides">
-        <q>${review}</q>
-        <p>${name}</p>
-        <span>${date}<span>
-      </div>`).join('')}
-      <a class="prev" id="prevButton" onclick="plusSlides(-1)">❮</a>
-      <a class="next" id="nextButton" onclick="plusSlides(1)">❯</a>
+
+        ${restaurant.customerReviews.map(({ name, review, date }) => `
+        <div class="item-review__slides">
+          <i class="fa fa-user-circle "></i>
+          <p>${review}</p>
+          <h3>${name}</h3>
+          <span>${date}<span>
+        </div>`).join('')}
+
     </div>
+
+  <a href="" id="loadMore">Load More</a>
   </div>
 </figure>
 </article>
@@ -58,7 +62,7 @@ const createRestaurantItemTemplate = (restaurant) => `
   <article class="menu-item">
   <figure class="card">
     <div class="image-holder">
-        <img class="item-thumbnail" src="${restaurant.pictureId ? CONFIG.BASE_URL_IMAGE + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}" style="width:100%;">
+        <img class="item-thumbnail" src="${restaurant.pictureId ? CONFIG.BASE_URL_IMAGE + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}" crossOrigin="anonymous" style="width:100%;">
         <span>Kota: ${restaurant.city}</span>
     </div>
     <div class="item-content">
@@ -69,4 +73,21 @@ const createRestaurantItemTemplate = (restaurant) => `
   </figure>
   </article>`;
 
-export { createRestaurantItemTemplate, createRestaurantDetailTemplate };
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};

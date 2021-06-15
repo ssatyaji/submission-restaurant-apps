@@ -1,6 +1,7 @@
-import $ from 'jquery';
 import RestaurantApi from '../../data/restaurant-api';
 import urlParser from '../../routes/url-parser';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LoadMore from '../../utils/load-more-initiator';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
 
 const Detail = {
@@ -14,6 +15,7 @@ const Detail = {
           </div>
       </div>
     </section>
+    <div id="likeButtonContainer"></div>
     `;
   },
 
@@ -22,7 +24,22 @@ const Detail = {
     const restauran = await RestaurantApi.detailRestaurant(url.id);
     const restauranContainer = document.querySelector('#menu-item__detail');
     restauranContainer.innerHTML = createRestaurantDetailTemplate(restauran);
-    // Letakan disini untuk ambil class dari komponen template creator
+
+    LoadMore.init({
+      button: document.querySelector('#loadMore'),
+    });
+
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restauran: {
+        id: restauran.id,
+        name: restauran.name,
+        description: restauran.description,
+        pictureId: restauran.pictureId,
+        city: restauran.city,
+        rating: restauran.rating,
+      },
+    });
   },
 };
 
